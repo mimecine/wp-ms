@@ -6,7 +6,8 @@ path: home
 
 <div class="xcontainer mx-auto md:flex flex-row flex-wrap justify-between items-center content-start snap snap-x snap-mandatory">
   {% for p in mspages %}
-    {{p.content.rendered | safe }}
+    {# {{p.content.rendered | safe }} #}
+    {{p | dump() }}
   {% endfor %}
 
   {%for i in range(1,4) %}
