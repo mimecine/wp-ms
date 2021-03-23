@@ -1,0 +1,16 @@
+---
+layout: default
+title: Macro-Sea
+path: home
+---
+
+<div class="xcontainer mx-auto md:flex flex-row flex-wrap justify-between items-center content-start snap snap-x snap-mandatory">
+  {% for p in mspages %}
+    {{p.content.rendered | safe }}
+  {% endfor %}
+
+  {%for i in range(1,4) %}
+    <i aria-hidden class="x invisible hidden md:block border-red-200 border-2 w-1/5 h-auto"> </i>
+  {% endfor %}
+
+</div>

@@ -1,0 +1,10 @@
+---
+layout: default
+title: Macro-Sea
+path: ms
+---
+<div class="xcontainer mx-auto md:flex flex-row flex-wrap justify-between items-center content-start snap snap-x snap-mandatory">
+    {%for p in mspages%}
+        {{p.title.rendered}}
+    {%endfor%}
+</div>

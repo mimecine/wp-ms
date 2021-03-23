@@ -1,0 +1,33 @@
+---
+layout: default
+title: Macro-Sea Tags
+path: 'tags'
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+permalink: /tags/{{ helpers.slug(tag) }}/
+tags:
+  - tags
+---
+
+  {% for thing in collections[ tag ] %}
+<div class="xcontainer mx-auto md:flex flex-row flex-wrap justify-between items-center content-start snap snap-x snap-mandatory">
+    <div class="w-full flex items-center justify-center">
+      <a href="{{thing.url}}" class="py-1 px-3 uppercase block border-2 border-black border-solid">{{thing.data.title}}</a>
+    </div>
+    {% for image in thing.data.images %}
+    {# {%set image = thing.data.images[0] %} #}
+    <figure class="text-center mt-3 md:mx-3 snap-start" data-tags="{{thing.data.tags}}">
+      <a href="{{thing.url}}"><div class="bg-ms-primary hover:filter-y">{% image image.image, thing.data.title, " object-fill md:h-40 2xl:h-60 w-auto -square- xmd:h-40 xmd:w-40 xmd:object-cover", "(max-width: 768px) 100vw, (max-width: 1536px) 32em, 64em" %}</div></a>  
+      <figcaption class="">{{ helpers.npad(loop.index)  }}</figcaption>  
+    </figure>
+    {% endfor %}
+
+  {%for i in range(1,4) %}
+    <i aria-hidden class="x invisible hidden md:block border-red-200 border-2 w-1/5 h-auto"> </i>
+  {% endfor %}
+</div>
+  {% endfor %}

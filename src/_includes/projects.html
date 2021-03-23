@@ -1,0 +1,26 @@
+---
+layout: default
+nomenu: true
+isproject: true
+---
+<div class="absolute top-0 bottom-0 w-screen h-screen snap overflow-y-scroll snap-y snap-mandatory" tabindex="100">
+    {%for image in images%}
+    <div class="h-full block snap-center grid place-items-center object-">
+    <figure>
+        {% image image.image, image.caption, "object-cover xw-auto xh-screen", "100vw" %}</a>  
+    </figure>
+    </div>
+    {%endfor%}
+    </div>
+
+    {# <article class="prose lg:prose-xl my-4 mx-auto">
+
+          <div>{{ content | safe }}</div>
+
+          <div class="font-thin text-xs border-t italic">
+            {{ credits| md | safe }}
+          </div>
+
+    </article> #}
+
+</div>
